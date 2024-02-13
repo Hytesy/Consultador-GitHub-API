@@ -1,0 +1,3 @@
+# CONSULTADOR DE PERFIS DO GITHUB
+Busca na API do GitHub informações do usuário pesquisado, como foto de perfil, descrição, repositórios, eventos e etc...
+
