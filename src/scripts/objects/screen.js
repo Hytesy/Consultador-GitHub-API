@@ -22,7 +22,7 @@ const screen = {
                     <li><i class="fa-solid fa-code-fork" style="color: #FF1744"></i> ${repo.forks_count}</li> 
                     <li><i class="fa-solid fa-star" style="color: #FFEB3B"></i> ${repo.stargazers_count}</li> 
                     <li><i class="fa-regular fa-eye" style="color:#7C4DFF"></i> ${repo.watchers_count}</li> 
-                    <li><i class="fa-solid fa-code" style="color:#00E676"></i> ${repo.language}</li> 
+                    <li><i class="fa-solid fa-code" style="color:#00E676"></i> ${repo.language ?? 'Sem linguagem'}</li> 
                 </ul>
              </a>
          </li>`)
@@ -41,7 +41,7 @@ const screen = {
             eventsItens += `<li><p><span class="nameEvents">${event.repo.name}</span> - ${createEventMessage ?? 'Evento sem descrição'}</p></li>`;
           } else if (event.type === 'PushEvent') {
             const commitMessages = event.payload.commits.map(commit => commit.message).join(', ');
-            eventsItens += `<li><p><span class="nameEvents">${event.repo.name}</span> - ${commitMessages ?? 'Evento sem descrição'}</p></li>`;
+            eventsItens += `<li><p><span class="nameEvents">${event.repo.name}</span> - ${commitMessages ?? 'Commit sem mensagem'}</p></li>`;
           }
         });
         
